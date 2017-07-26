@@ -24,7 +24,7 @@ $scope.goToHome= function(){
 })
 foodieApp.controller('restaurantController',function($scope,$routeParams,$http) {
 
-var diabetic_ingredients = ['meat','cheese']
+var diabetic_ingredients = ['meat','cheese'];
 
 
 	$scope.getIngredients = function(url) {
@@ -46,8 +46,9 @@ var diabetic_ingredients = ['meat','cheese']
 						$scope.ingredients.push(ingredients[i].name);
 						}
 
-						for(var i =0;i < diabetic_ingredients.length;i++){
-							var a= diabetic_ingredients.indexOf(ingredients[i]);
+						for(var j =0;j < $scope.ingredients.length;j++){
+							var a= diabetic_ingredients.indexOf($scope.ingredients[j]);
+							console.log(a);
 							if(a>=0){
 								$scope.message="It is unhealthy	";
 								break;							}
